@@ -18,7 +18,7 @@ export const AuthLayout = () => {
         </footer>
       </div>
 
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center relative">
         <Outlet />
       </div>
     </div>
