@@ -5,9 +5,10 @@ interface PaginationProps {
   pageIndex: number;
   totalCount: number;
   perPage: number;
+  onPageChange: (pageIndex: number) => Promise<void> | void;
 }
 
-export const Pagination = ({ pageIndex, totalCount, perPage }: PaginationProps) => {
+export const Pagination = ({ pageIndex, totalCount, perPage, onPageChange }: PaginationProps) => {
   const pages = Math.ceil(totalCount / perPage) || 1
 
   return (
@@ -22,19 +23,42 @@ export const Pagination = ({ pageIndex, totalCount, perPage }: PaginationProps) 
         </div>
 
         <div className="flex items-center gap-2">
-          <Button variant="outline" className="size-8 p-0">
+          <Button
+            onClick={() => onPageChange(0)}
+            variant="outline"
+            className="size-8 p-0"
+            disabled={pageIndex === 0}
+          >
             <ChevronsLeft className="size-4" />
             <span className="sr-only">Primeira página</span>
           </Button>
-          <Button variant="outline" className="size-8 p-0">
+
+          <Button
+            onClick={() => onPageChange(pageIndex - 1)}
+            variant="outline"
+            className="size-8 p-0"
+            disabled={pageIndex === 0}
+          >
             <ChevronLeft className="size-4" />
             <span className="sr-only">Página anterior</span>
           </Button>
-          <Button variant="outline" className="size-8 p-0">
+
+          <Button
+            onClick={() => onPageChange(pageIndex + 1)}
+            variant="outline"
+            className="size-8 p-0"
+            disabled={pages <= pageIndex + 1}
+          >
             <ChevronRight className="size-4" />
             <span className="sr-only">Próxima página</span>
           </Button>
-          <Button variant="outline" className="size-8 p-0">
+
+          <Button
+            onClick={() => onPageChange(pages - 1)}
+            variant="outline"
+            className="size-8 p-0"
+            disabled={pages <= pageIndex + 1}
+          >
             <ChevronsRight className="size-4" />
             <span className="sr-only">Última página</span>
           </Button>
