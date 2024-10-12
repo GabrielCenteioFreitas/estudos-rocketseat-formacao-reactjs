@@ -14,13 +14,14 @@ const orderStatusMap: Record<TOrderStatus, string> = {
   processing: 'Em preparo',
   delivering: 'Em entrega',
   delivered: 'Entregue',
-  canceled: 'Cancelada',
+  canceled: 'Cancelado',
 }
 
 export const OrderStatus = ({ status }: OrderStatusProps) => {
   return (
     <div className="flex items-center gap-2">
       <span
+        data-testid="badge"
         className={`size-2 rounded-full
          ${status === 'pending'
             ? 'bg-slate-400'
