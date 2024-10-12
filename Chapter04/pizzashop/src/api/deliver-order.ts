@@ -1,11 +1,11 @@
 import { api } from "@/lib/axios";
 
-export interface DeliverOrderQuery {
+export interface DeliverOrderParams {
   orderId: string;
 }
 
 export async function deliverOrder({
   orderId
-}: DeliverOrderQuery) {
+}: DeliverOrderParams) {
   await api.patch(`/orders/${orderId}/deliver`)
 }

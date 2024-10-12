@@ -7,7 +7,7 @@ export interface GetProfileResponse {
   id: string;
   role: "manager" | "customer";
   createdAt: Date;
-  updatedAt: Date;
+  updatedAt: Date | null;
 }
 
 export async function getProfile() {

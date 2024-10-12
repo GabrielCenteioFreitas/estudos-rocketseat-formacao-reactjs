@@ -4,7 +4,7 @@ export interface GetOrderDetailsQuery {
   orderId: string;
 }
 
-export interface GetOrderDetailsResonse {
+export interface GetOrderDetailsResponse {
   order: {
     id: string;
     status: "pending" | "processing" | "delivering" | "delivered" | "canceled";
@@ -29,7 +29,7 @@ export interface GetOrderDetailsResonse {
 export async function getOrderDetails({
   orderId
 }: GetOrderDetailsQuery) {
-  const response = await api.get<GetOrderDetailsResonse>(`/orders/${orderId}`)
+  const response = await api.get<GetOrderDetailsResponse>(`/orders/${orderId}`)
 
   return response.data.order
 }
