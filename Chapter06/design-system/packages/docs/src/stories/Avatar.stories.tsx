@@ -8,6 +8,13 @@ export default {
     src: 'https://github.com/GabrielCenteioFreitas.png',
     alt: 'Gabriel Centeio Freitas',
   },
+  argTypes: {
+    src: {
+      control: {
+        type: 'text',
+      },
+    },
+  },
 } as Meta<AvatarProps>
 
 export const Primary: StoryObj<AvatarProps> = {}
