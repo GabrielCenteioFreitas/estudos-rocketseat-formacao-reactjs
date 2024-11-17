@@ -7,6 +7,7 @@
     "preview": "vite preview",
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
+    "deploy-storybook": "storybook-to-ghpages",
     "lint": "eslint --fix"
   },
   "dependencies": {
@@ -29,6 +30,7 @@
     "@storybook/blocks": "^8.4.1",
     "@storybook/react": "^8.4.1",
     "@storybook/react-vite": "^8.4.1",
+    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/test": "^8.4.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
