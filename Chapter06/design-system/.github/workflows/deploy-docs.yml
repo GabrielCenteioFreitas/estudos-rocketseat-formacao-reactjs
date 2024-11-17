@@ -23,7 +23,7 @@ jobs:
 
       - run:  npm run build
         env:
-          TURBO_TOKEN: 3M3a4YJTfdhLFMWMGQe0hJ2D
+          TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           TURBO_TEAM: gabriel-centeio-freitas-projects
 
       - name: Deploy storybook
